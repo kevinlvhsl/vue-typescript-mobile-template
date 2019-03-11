@@ -4,7 +4,7 @@ import { getToken } from '@/utils/auth';
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_MOCK_API,
-  timeout: 5000,
+  timeout: 10 * 1000,
 });
 
 // Request interceptors
@@ -14,14 +14,10 @@ service.interceptors.request.use(
       // showLoading = false
       delete config.params.hideLoading;
     } else {
-      // Indicator.open()
+      Toast({ type: 'loading' , duration: 10 * 1000})
     }
-    // Add X-Token header to every request, you can add other custom headers here
-    config.headers.Authorization = window.sessionStorage.TOKEN
-    || `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiI1YjlmODI5YTliM2JlNDAw
-MDFiNDZkOGEiLCJpc3MiOiJodHRwOi8vd3d3Lnpob25nYW4uY29tLyIsImV4cCI6MTU0NzgwNzAwMSw
-iaWF0IjoxNTQ1MjE1MDAxLCJqdGkiOiJjMWU3MGNjZi1jODVmLTRlNjEtODMxNi04MTZiMTdjZDA4Y
-zkifQ.AyKDNwfuNDmj1esMYWtoxgSFiTX-PgLi4TcpiHE1Z5o`;
+    // Add Token header to every request, you can add other custom headers here
+    config.headers.TOKEN = window.sessionStorage.TOKEN;
     return config;
   },
   (error) => {
