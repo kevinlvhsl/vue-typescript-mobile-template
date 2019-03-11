@@ -1,5 +1,5 @@
-# vue-ts-h5
-
+# vue-typescript-mobile-template
+vant + axios + vw
 ## Project setup
 ```
 yarn install
