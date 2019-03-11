@@ -1,0 +1,57 @@
+{
+  "name": "vue-ts-h5",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@types/js-cookie": "^2.2.1",
+    "js-cookie": "^2.2.0",
+    "register-service-worker": "^1.5.2",
+    "vant": "^1.5.9",
+    "vue": "^2.6.6",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-module-decorators": "^0.9.8"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-plugin-pwa": "^3.1.2",
+    "@vue/cli-plugin-typescript": "^3.1.1",
+    "@vue/cli-service": "^3.1.4",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "lint-staged": "^8.1.0",
+    "node-sass": "^4.9.0",
+    "postcss-aspect-ratio-mini": "^1.0.1",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-px-to-viewport": "^1.1.0",
+    "postcss-url": "^8.0.0",
+    "postcss-viewport-units": "^0.1.6",
+    "postcss-write-svg": "^3.0.1",
+    "sass-loader": "^7.1.0",
+    "typescript": "^3.0.0",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
